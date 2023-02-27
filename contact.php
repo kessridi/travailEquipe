@@ -2,13 +2,13 @@
     <?php
  
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Traitement du formulaire ici
+        
         $nom = $_POST['nom'];
         $email = $_POST['email'];
         $message = $_POST['message'];
 
-        // Envoyer l'e-mail ici
-        $to = 'votre@email.com';
+       
+        $to = '@email.com';
         $subject = 'Nouveau message depuis le formulaire de contact';
         $headers = 'From: ' . $email . "\r\n" .
             'Reply-To: ' . $email . "\r\n" .
@@ -20,10 +20,10 @@
 
         mail($to, $subject, $message_email, $headers);
 
-        // Afficher un message de confirmation
+        
         echo '<h2>Votre message a été envoyé avec succès !</h2>';
     } else {
-        // Afficher le formulaire de contact
+      
         echo '<h1>Contactez-nous</h1>';
         echo '<form method="post" action="">';
         echo '<label for="nom">Nom :</label>';
